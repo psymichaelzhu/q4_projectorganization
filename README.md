@@ -132,7 +132,7 @@ This repository consists of three main components:
 
 The main experiment configuration is defined in `experiment/config/experiment.yml`. This file specifies which design (such as task modules, layout settings, and stimulus sets) should be used for a given experiment. More fine-grained settings are stored in YAML files under `experiment/config/modules/`.
 
-To launch the experiment locally, open `experiment/launcher/run_experiment.html` in a web browser.
+To launch the experiment locally, first clone the repository, then open `experiment/launcher/run_experiment.html` in a web browser.
 
 At runtime, the experiment code automatically reads parameters from `experiment/config/experiment.yml` and the corresponding module YAML files in `experiment/config/modules/`. Any adjustments to the experiment design should be made in those YAML files rather than hard-coding in the scripts.
 
@@ -156,7 +156,7 @@ Within each thread, the `analysis/` directory contains scripts, configuration fi
 
 Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`. We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
-To run an analysis, first install the required dependencies listed in requirements.txt through 
+To run an analysis, first clone the repository, then install the required dependencies listed in requirements.txt through 
 ```
 pip install -r requirements.txt
 ```
