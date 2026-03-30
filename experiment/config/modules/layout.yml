@@ -9,7 +9,6 @@ side_by_side:
   align_items: "center"
   padding: "24px"
 
-# top-bottom layout
 top_bottom:
   display: "flex"
   flex_direction: "column"
