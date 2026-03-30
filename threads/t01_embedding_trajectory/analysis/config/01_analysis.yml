@@ -1,0 +1,13 @@
+clip_embedding:
+  model:
+    model_name: "ViT-B/32"
+    pretrained: "openai"
+  normalize: false
+  preprocess:
+    mode: "pad"
+
+regression:
+  DV: "accuracy"
+  IVs:
+    - "target_word"
+    - "age_group"
