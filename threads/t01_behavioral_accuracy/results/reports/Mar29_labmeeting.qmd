@@ -1,0 +1,42 @@
+---
+title: "Vocabulary Data"
+format:
+  pptx:
+    slide-level: 2
+---
+
+## 2-2. PC by Word
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**2-2-1. Mean PC by Word**
+
+![](../figures/main/p2-2-1_pc-word-mean.png){width=100%}
+:::
+
+::: {.column width="50%"}
+**2-2-2. SD of PC by Word**
+
+![](../figures/main/p2-2-2_pc-word-sd.png){width=100%}
+:::
+
+::::
+
+## 3. Word-level LM
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**3-1. Intercept**
+
+![](../figures/main/p3-1_intercept-word-lm.png){width=100%}
+:::
+
+::: {.column width="50%"}
+**3-2. Slope**
+
+![](../figures/main/p3-2_slope-word-lm.png){width=100%}
+:::
+
+::::

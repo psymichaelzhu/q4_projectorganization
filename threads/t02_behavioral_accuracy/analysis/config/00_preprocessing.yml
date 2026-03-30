@@ -1,7 +1,0 @@
-outlier:
-  method: zscore         
-  threshold: 3.0       
-  columns:               
-    - "response_time"
-  remove: true           
-  report: true

@@ -1,4 +1,4 @@
-**Data Access Policy**  
+**Data Access**  
 All large raw data files (such as `data_raw/`) for this project are hosted on [OSF](https://osf.io/). The repository contains only placeholder folders for these large materials. To obtain the actual data:
 
 1. Go to the [OSF project page](https://osf.io/).

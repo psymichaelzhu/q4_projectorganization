@@ -54,41 +54,46 @@ project_name/
 │       └── ...
 │
 ├── threads/                        # different threads of analysis
-│   ├── t01_embedding_trajectory/
+│   ├── t01_behavioral_accuracy/
 │   │   ├── README.md               # step-by-step walkthrough + dictionary
 │   │   ├── data/
 │   │   │   ├── data_clean/         # preprocessed data (e.g., outliers removed)
 │   │   │   ├── data_extracted/     # extracted features (e.g., CLIP embeddings)
-│   │   │   └── data_transformed/   # analysis-ready data (e.g., merged with predictors, standardized)
+│   │   │   └── data_transformed/   # analysis-ready data (e.g., aggregated by age group)
 │   │   ├── analysis/               # naming: step index + analysis type
 │   │   │   ├── requirements.txt
 │   │   │   ├── scripts/            # parameters are read from config files rather than hard-coded
 │   │   │   │   ├── utils/          # helper functions
-│   │   │   │   ├── 00_preprocessing/
-│   │   │   │   ├── 01_analysis/
-│   │   │   │   ├── 02_visualization/
+│   │   │   │   ├── 01_cell_level_heatmap.R
+│   │   │   │   ├── 02_child_descriptive_summary.R
+│   │   │   │   ├── 03_child_word_lm.R
 │   │   │   │   └── ...
 │   │   │   ├── config/             # parameterization details at each step
-│   │   │   │   ├── 00_preprocessing.yml
-│   │   │   │   ├── 01_analysis.yml
-│   │   │   │   ├── 02_visualization.yml
+│   │   │   │   ├── 01_cell_level_heatmap.yml
+│   │   │   │   ├── 02_child_descriptive_summary.yml
+│   │   │   │   ├── 03_child_word_lm.yml
 │   │   │   │   └── ...
 │   │   │   ├── demos/              # notebooks for demonstrating core functions
 │   │   │   └── launcher/           # end-to-end pipeline runners, if applicable
 │   │   └── results/
 │   │       ├── reports/            # Quarto reports for flexible presentation
+│   │       │   ├── Mar29_labmeeting.qmd
 │   │       ├── stats/  
+│   │       │   ├── word_lm.csv
 │   │       └── figures/            # naming: p/s + index + title.png
 │   │           ├── main/           
 │   │           │   ├── p1-1_pc-heatmap.png
-│   │           │   ├── p1-2_Nsub-heatmap.png
+│   │           │   ├── p1-2_n_subjects-heatmap.png
 │   │           │   ├── p2-1_pc-age-trend.png
-│   │           │   ├── p2-2_pc-word-mean.png
+│   │           │   ├── p2-2-1_pc-word-mean.png
+│   │           │   ├── p2-2-2_pc-word-sd.png
+│   │           │   ├── p3-1_intercept-word-lm.png
+│   │           │   ├── p3-2_slope-word-lm.png
 │   │           │   └── ...
 │   │           └── supplementary/
 │   │               ├── s1-1_pc-individual-trajectory.png
 │   │               └── ...
-│   └── t02_behavioral_accuracy/
+│   └── t02_embedding_trajectory/
 │       └── ...
 │
 └── docs/
@@ -123,6 +128,7 @@ This repository consists of three main components:
 > *Tip:*  
 > If you only want to inspect the experiment's code and structure, simply cloning the repository is sufficient.  
 > If you want to reproduce analyses, you will also need to download the raw data from OSF and install any thread-specific dependencies.
+
 
 
 ---
