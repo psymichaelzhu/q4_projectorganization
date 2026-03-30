@@ -24,4 +24,4 @@ Open `t01_behavioral_accuracy.Rproj` in RStudio, then run `analysis/launcher/run
 
 After running the pipeline, the results will be saved in `results/`.
 
-[Optional] Render `.qmd` files in `results/reports/` to generate reports.
+[Optional] Render `.qmd` files in `results/reports/` to generate reports, [example report](results/reports/Mar29_labmeeting.pptx).
