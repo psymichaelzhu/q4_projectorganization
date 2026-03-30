@@ -1,0 +1,21 @@
+{
+    "name": "Sample Vocabulary Development Experiment",
+    "description": "An experiment examining vocabulary development across age groups using word recognition and language production tasks.",
+    "date_created": "2024-06-10",
+    "tasks": [
+      {
+        "name": "Word Recognition",
+        "script": "experiment/tasks/behavioral_tasks/word_recognition.html",
+        "config_file": "experiment/config/modules/word_recognition.yml"
+      },
+      {
+        "name": "Language Production",
+        "script": "experiment/tasks/behavioral_tasks/language_production.html",
+        "config_file": "experiment/config/modules/language_production.yml"
+      }
+    ],
+    "stimuli": {
+      "source": "experiment/stimuli/generated/",
+      "num_items": 60
+    }
+  }
