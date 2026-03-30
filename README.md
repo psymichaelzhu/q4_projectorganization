@@ -6,7 +6,7 @@
 
 A repository for an online behavioral experiment examining how accurately children of different ages recognize words when those words are presented alongside distractor images. 
 
-In the word-recognition task, children were asked to identify a target word, such as “apple,” in the presence of a distractor image, such as “carrot”.
+In the word-recognition task, children were asked to identify a target word, such as “apple,” in the presence of a distractor image, such as “carrot”. The main measure is accuracy of recognition. Independent variables include target identity and child age group.
 
 Participants were recruited through local schools. Data collected via [JATOS](https://www.jatos.org/); experiment hosted on [DigitalOcean](https://www.digitalocean.com/). 
 
