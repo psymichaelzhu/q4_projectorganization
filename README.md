@@ -162,7 +162,10 @@ Within each thread, the `analysis/` directory contains scripts, configuration fi
 
 Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`. We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
-To run an analysis, first clone the repository, then install the required dependencies (specific instructions are in the `README.md` of each thread).
+To run an analysis, first clone the repository, then conduct analysis following the specific instructions in the `README.md` for each thread:
+
+Usually, you need to install the required dependencies first.
+
 Then run the full pipeline through launcher file in `threads/{thread_name}/analysis/launcher/`, or manually execute scripts step by step from `threads/{thread_name}/analysis/scripts/`. 
 
 At runtime, analysis scripts read parameters directly from the YAML configuration files. Any adjustments to the analysis design should be made in those YAML files rather than hard-coding in the scripts.
