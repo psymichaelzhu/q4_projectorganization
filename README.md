@@ -72,7 +72,7 @@ project_name/
 │   │   │   │   ├── 02_visualization.yml
 │   │   │   │   └── ...
 │   │   │   ├── demos/              # notebooks for demonstrating core functions
-│   │   │   └── Launcher/           # end-to-end pipeline runners, if applicable
+│   │   │   └── launcher/           # end-to-end pipeline runners, if applicable
 │   │   └── results/
 │   │       ├── reports/            # Quarto reports for flexible presentation
 │   │       ├── stats/  
