@@ -21,3 +21,7 @@ All the following steps start with the aggregated vocabulary dataset `data/data_
 ## Usage
 
 Open `t01_behavioral_accuracy.Rproj` in RStudio, then run `analysis/launcher/run_pipeline.R`.
+
+After running the pipeline, the results will be saved in `results/`.
+
+[Optional] Render `.qmd` files in `results/reports/` to generate reports.
