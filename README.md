@@ -53,7 +53,7 @@ project_name/
 │       │   └── ...
 │       └── ...
 │
-├── threads/                        # different threads of analysis
+├── analysis_threads/                        # different threads of analysis
 │   ├── t01_behavioral_accuracy/
 │   │   ├── README.md               # step-by-step walkthrough + dictionary
 │   │   ├── data/
@@ -97,7 +97,7 @@ project_name/
 │       └── ...
 │
 └── docs/
-    ├── threads_overview.md         # summary of all threads (objectives, flow, key results)
+    ├── threads_overview.md         # summary of all analysis threads (objectives, flow, key results)
     └── data_access.md              # data access and usage policy
 ```
 
@@ -116,18 +116,18 @@ This repository consists of three main components:
 
 - **`experiment/`** — Contains materials and code for running the online experiment.
 - **`data_raw/`** — Placeholder folders; actual raw data must be downloaded separately from [OSF](https://osf.io/).
-- **`threads/`** — Contains independent analysis workflows for different research questions.
+- **`analysis_threads/`** — Contains independent analysis workflows for different research questions.
 
 ### Typical Workflow
 
 1. Clone the repository.
 2. Download and replace the placeholder `data_raw/` directory with the actual raw data from OSF if you plan to run analyses.
 3. Use the `experiment/` folder to inspect or launch the experiment.
-4. Follow the `README.md` in the relevant thread to configure and run the analysis pipeline for a specific question.
+4. Follow the `README.md` in the relevant analysis thread to configure and run the analysis pipeline for a specific question.
 
 > *Tip:*  
 > If you only want to inspect the experiment's code and structure, simply cloning the repository is sufficient.  
-> If you want to reproduce analyses, you will also need to download the raw data from OSF and install any thread-specific dependencies.
+> If you want to reproduce analyses, you will also need to download the raw data from OSF and install any dependencies specific to the analysis thread.
 
 
 
@@ -156,23 +156,23 @@ All shared data are de-identified and should not be redistributed without permis
 ---
 ## Threads of Analysis
 
-The `threads/` directory contains independent analysis threads, each focused on a specific research question or workflow (see `docs/threads_overview.md` for an overview). Each thread has its own `README.md`, which explains the analysis objective, step-by-step workflow, variable dictionary, and key functions.
+The `analysis_threads/` directory contains independent analysis threads, each focused on a specific research question or workflow (see `docs/threads_overview.md` for an overview). Each thread has its own `README.md`, which explains the analysis objective, step-by-step workflow, variable dictionary, and key functions.
 
 Within each thread, the `analysis/` directory contains scripts, configuration files, optional demos, and launchers. 
 
-Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`, for example [02_child_descriptive_summary.yml](threads/t01_behavioral_accuracy/analysis/config/02_child_descriptive_summary.yml). We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
+Analysis scripts are organized by step index under `analysis_threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `analysis_threads/{thread_name}/analysis/config/`, for example [02_child_descriptive_summary.yml](analysis_threads/t01_behavioral_accuracy/analysis/config/02_child_descriptive_summary.yml). We also provide some demo notebooks under `analysis_threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
-To run an analysis, first clone the repository, then conduct analysis following the specific instructions in the `README.md` for each thread:
+To run an analysis, first clone the repository, then conduct analysis following the specific instructions in the `README.md` for each analysis thread:
 
 Usually, you need to install the required dependencies first.
 
-Then run the full pipeline through launcher file in `threads/{thread_name}/analysis/launcher/`, for example [run_pipeline.R](threads/t01_behavioral_accuracy/analysis/launcher/run_pipeline.R), or manually execute scripts step by step from `threads/{thread_name}/analysis/scripts/`. 
+Then run the full pipeline through launcher file in `analysis_threads/{thread_name}/analysis/launcher/`, for example [run_pipeline.R](analysis_threads/t01_behavioral_accuracy/analysis/launcher/run_pipeline.R), or manually execute scripts step by step from `analysis_threads/{thread_name}/analysis/scripts/`. 
 
 At runtime, analysis scripts read parameters directly from the YAML configuration files. Any adjustments to the analysis design should be made in those YAML files rather than hard-coding in the scripts.
 
-After running the analysis, the processed data will be saved in `threads/{thread_name}/data/`, and the results will be saved in `threads/{thread_name}/results/`, for example [behavioral accuracy figures](threads/t01_behavioral_accuracy/results/figures/main/). 
+After running the analysis, the processed data will be saved in `analysis_threads/{thread_name}/data/`, and the results will be saved in `analysis_threads/{thread_name}/results/`, for example [behavioral accuracy figures](analysis_threads/t01_behavioral_accuracy/results/figures/main/). 
 
-Some reporting templates are provided in `threads/{thread_name}/results/reports/`, for example [sample slides](threads/t01_behavioral_accuracy/results/reports/Mar29_labmeeting.pptx). After running the analysis, render the `.qmd` files to generate reports.
+Some reporting templates are provided in `analysis_threads/{thread_name}/results/reports/`, for example [sample slides](analysis_threads/t01_behavioral_accuracy/results/reports/Mar29_labmeeting.pptx). After running the analysis, render the `.qmd` files to generate reports.
 
 ---
 
