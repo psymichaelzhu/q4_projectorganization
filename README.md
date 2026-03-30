@@ -6,7 +6,7 @@
 
 A repository for an online behavioral experiment examining how accurately children of different ages recognize words when those words are presented alongside distractor images. 
 
-In the word-recognition task, children were asked to identify a target word, such as “apple,” in the presence of a distractor image, such as “carrot”. The main measure is accuracy of recognition. Independent variables include target identity and child age group.
+In the word-recognition task, children were asked to identify a target word, such as “apple,” in the presence of a distractor image, such as “carrot”.
 
 Participants were recruited through local schools. Data collected via [JATOS](https://www.jatos.org/); experiment hosted on [DigitalOcean](https://www.digitalocean.com/). 
 
@@ -44,8 +44,10 @@ project_name/
 ├── data_raw/
 │   ├── README.md                   # all folders are placeholder; see OSF for raw data
 │   └── experiment_id1/
-│       ├── README.md               # experiment design + dictionary of variables
+│       ├── README.md               # documents the experiment design + dictionary of variables
+│       ├── experiment_config.json  # full configuration used for this experiment
 │       ├── participant_id1/
+│       │   ├── participant_config.json  # participant-specific configuration
 │       │   ├── trial_id1/          # If trial-level data is simple, then this level can be merged.
 │       │   ├── trial_id2/
 │       │   └── ...
@@ -94,15 +96,55 @@ project_name/
     └── data_access.md              # data access and usage policy
 ```
 
----
 
-# 
+---
+## Experiment
+
+`experiment/` directory contains all materials needed to run the online experiment, including stimuli, task scripts, configuration files, and the launcher. 
+
+The main experiment configuration is defined in `experiment/config/experiment.yml`. This file specifies which design (such as task modules, layout settings, and stimulus sets) should be used for a given experiment. More detailed settings are stored in YAML files under `experiment/config/modules/`.
+
+To launch the experiment locally, open `experiment/launcher/run_experiment.html` in a web browser.
+
+At runtime, the experiment code automatically reads parameters from `experiment/config/experiment.yml` and the corresponding module YAML files in `experiment/config/modules/`. Any adjustments to the experiment design should be made in those YAML files rather than hard-coding in the scripts.
+
+---
+## Raw Data
+
+The `data_raw/` directory in this repository contains placeholders only. The actual raw data are hosted on [OSF](https://osf.io/). 
+
+To use the data, first clone this repository. Then download data_raw.zip from OSF, extract it, and replace the placeholder `data_raw/` folder with the downloaded version. After that, the analysis pipelines can be run normally.
+
+The raw data are organized hierarchically by experiment, participant, and trial. At the experiment level, a `README.md` describes the study design and variables, and an `experiment_config.json` records the full configuration used for that run. At the participant level, a `participant_config.json` stores participant-specific settings such as assigned condition and trial shuffling seed. 
+
+All shared data are de-identified and should not be redistributed without permission. See `docs/data_access.md` for details.
+
+---
+## Threads of Analysis
+
+The `threads/` directory contains independent analysis threads, each focused on a specific research question or workflow (see `docs/threads_overview.md` for an overview). Each thread has its own `README.md`, which explains the analysis objective, step-by-step workflow, variable dictionary, and key functions.
+
+Within each thread, the `analysis/` directory contains scripts, configuration files, optional demos, and launchers. 
+
+Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`. 
+
+To run an analysis, first install the required dependencies listed in requirements.txt through 
+```
+pip install -r requirements.txt
+```
+Then run the full pipeline through `threads/{thread_name}/analysis/launcher/run_analysis.py`, or manually execute scripts step by step from `threads/{thread_name}/analysis/scripts/`. Analysis scripts read parameters directly from the YAML configuration files. Any adjustments to the analysis design should be made in those YAML files rather than hard-coding in the scripts.
+
+After running the analysis, the processed data will be saved in `threads/{thread_name}/data/`, and the results will be saved in `threads/{thread_name}/results/`. 
+
+Some reporting templates are provided in `threads/{thread_name}/results/reports/`. After running the analysis, render the `.qmd` files to generate reports.
+
+We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
 ---
 
 ## Citation
 
-If you use this repository or dataset, please cite. Here is an example BibTeX entry:
+If you use this repository, please cite. Here is an example BibTeX entry:
 
 ```
 @misc{zhu_word_recognition_children,
