@@ -9,13 +9,13 @@ Transform aggregated vocabulary accuracy data into descriptive visualizations an
 All the following steps start with the aggregated vocabulary dataset `data/data_transformed/vocabulary_dataset.csv`.
 
 - `01_cell_level_heatmap.R`:
-   Generate full age-by-word heatmaps for recognition accuracy (pc) `p1-1_pc-heatmap.png` and subject counts (num_subjects) `p1-2_n_subjects-heatmap.png`.
+   Generate full age-by-word heatmaps for recognition accuracy (pc) `main/p1-1_pc-heatmap.png` and subject counts (num_subjects) `main/p1-2_n_subjects-heatmap.png`.
 
 - `02_child_descriptive_summary.R`:
-  Filter out the adult group (age_group == 25) and transform the child-only data into marginal summaries, including mean accuracy by age `p2-1_pc-age-trend.png` and mean / SD of accuracy by word `p2-2-1_pc-word-mean.png` `p2-2-2_pc-word-sd.png`.
+  Filter out the adult group (age_group == 25) and transform the child-only data into marginal summaries, including mean accuracy by age `main/p2-1_pc-age-trend.png` and mean / SD of accuracy by word `main/p2-2-1_pc-word-mean.png` `main/p2-2-2_pc-word-sd.png`.
 
 - `03_child_word_lm.R`:
-  Center age at the youngest child group (age_center = 3), fit per-word linear regressions on the child-only data `word_lm.csv`, and generate plots of regression intercepts and slopes `p3-1_intercept-word-lm.png` `p3-2_slope-word-lm.png`.
+  Center age at the youngest child group (age_center = 3), fit per-word linear regressions on the child-only data `stats/word_lm.csv`, and generate plots of regression intercepts and slopes `main/p3-1_intercept-word-lm.png` `main/p3-2_slope-word-lm.png`.
 
 
 ## Usage
