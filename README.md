@@ -136,7 +136,7 @@ This repository consists of three main components:
 
 `experiment/` directory contains all materials needed to run the experiment, including stimuli, task scripts, configuration files, and the launcher. 
 
-The main experiment configuration is defined in `experiment/config/experiment.yml`. This file specifies which design (such as task modules, layout settings, and stimulus sets) should be used for a given experiment. More fine-grained settings are stored in YAML files under `experiment/config/modules/`.
+The main experiment configuration is defined in `experiment/config/experiment.yml`. This [file](experiment/config/experiment.yml) specifies which design (such as task modules, layout settings, and stimulus sets) should be used for a given experiment. More fine-grained settings are stored in YAML files under `experiment/config/modules/`, for example [layout](experiment/config/modules/layout.yml).
 
 To launch the experiment locally, first clone the repository, then open `experiment/launcher/run_experiment.html` in a web browser.
 
@@ -149,7 +149,7 @@ The `data_raw/` directory in this repository contains placeholders only. The act
 
 To use the data, first clone this repository. Then download data_raw.zip from OSF, extract it, and replace the placeholder `data_raw/` folder with the downloaded version. After that, the analysis pipelines can be run normally.
 
-The raw data are organized hierarchically by experiment, participant, and trial. At the experiment level, a `README.md` describes the study design and variables, and an `experiment_config.json` records the full configuration used for that run. At the participant level, a `participant_config.json` stores participant-specific settings such as assigned condition and trial shuffling seed. 
+The raw data are organized hierarchically by experiment, participant, and trial. At the experiment level, a `README.md` describes the study design and variables, and an [`experiment_config.json`](data_raw/experiment_id1/experiment_config.json) records the full configuration used for that run. At the participant level, a [`participant_config.json`](data_raw/experiment_id1/participant_id1/participant_config.json) stores participant-specific settings such as assigned condition and trial shuffling seed. 
 
 All shared data are de-identified and should not be redistributed without permission. See `docs/data_access.md` for details.
 
@@ -160,19 +160,19 @@ The `threads/` directory contains independent analysis threads, each focused on 
 
 Within each thread, the `analysis/` directory contains scripts, configuration files, optional demos, and launchers. 
 
-Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`. We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
+Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`, for example [02_child_descriptive_summary.yml](threads/t01_behavioral_accuracy/analysis/config/02_child_descriptive_summary.yml). We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
 To run an analysis, first clone the repository, then conduct analysis following the specific instructions in the `README.md` for each thread:
 
 Usually, you need to install the required dependencies first.
 
-Then run the full pipeline through launcher file in `threads/{thread_name}/analysis/launcher/`, or manually execute scripts step by step from `threads/{thread_name}/analysis/scripts/`. 
+Then run the full pipeline through launcher file in `threads/{thread_name}/analysis/launcher/`, for example [run_pipeline.R](threads/t01_behavioral_accuracy/analysis/launcher/run_pipeline.R), or manually execute scripts step by step from `threads/{thread_name}/analysis/scripts/`. 
 
 At runtime, analysis scripts read parameters directly from the YAML configuration files. Any adjustments to the analysis design should be made in those YAML files rather than hard-coding in the scripts.
 
-After running the analysis, the processed data will be saved in `threads/{thread_name}/data/`, and the results will be saved in `threads/{thread_name}/results/`. 
+After running the analysis, the processed data will be saved in `threads/{thread_name}/data/`, and the results will be saved in `threads/{thread_name}/results/`, for example [behavioral accuracy figures](threads/t01_behavioral_accuracy/results/figures/main/). 
 
-Some reporting templates are provided in `threads/{thread_name}/results/reports/`. After running the analysis, render the `.qmd` files to generate reports.
+Some reporting templates are provided in `threads/{thread_name}/results/reports/`, for example [sample slides](threads/t01_behavioral_accuracy/results/reports/Mar29_labmeeting.pptx). After running the analysis, render the `.qmd` files to generate reports.
 
 ---
 
