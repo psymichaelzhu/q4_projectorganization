@@ -98,11 +98,39 @@ project_name/
 
 
 ---
+
+## Getting Started
+
+To get started, first clone this repository:
+
+```bash
+git clone https://github.com/psymichaelzhu/q4_projectorganization.git
+```
+
+This repository consists of three main components:
+
+- **`experiment/`** — Contains materials and code for running the online experiment.
+- **`data_raw/`** — Placeholder folders; actual raw data must be downloaded separately from [OSF](https://osf.io/).
+- **`threads/`** — Contains independent analysis workflows for different research questions.
+
+### Typical Workflow
+
+1. Clone the repository.
+2. Download and replace the placeholder `data_raw/` directory with the actual raw data from OSF if you plan to run analyses.
+3. Use the `experiment/` folder to inspect or launch the experiment.
+4. Use the `threads/` directory to run analysis pipelines for particular questions.
+
+> *Tip:*  
+> If you only want to inspect the experiment's code and structure, simply cloning the repository is sufficient.  
+> If you want to reproduce analyses, you will also need to download the raw data from OSF and install any thread-specific dependencies.
+
+
+---
 ## Experiment
 
-`experiment/` directory contains all materials needed to run the online experiment, including stimuli, task scripts, configuration files, and the launcher. 
+`experiment/` directory contains all materials needed to run the experiment, including stimuli, task scripts, configuration files, and the launcher. 
 
-The main experiment configuration is defined in `experiment/config/experiment.yml`. This file specifies which design (such as task modules, layout settings, and stimulus sets) should be used for a given experiment. More detailed settings are stored in YAML files under `experiment/config/modules/`.
+The main experiment configuration is defined in `experiment/config/experiment.yml`. This file specifies which design (such as task modules, layout settings, and stimulus sets) should be used for a given experiment. More fine-grained settings are stored in YAML files under `experiment/config/modules/`.
 
 To launch the experiment locally, open `experiment/launcher/run_experiment.html` in a web browser.
 
@@ -126,19 +154,19 @@ The `threads/` directory contains independent analysis threads, each focused on 
 
 Within each thread, the `analysis/` directory contains scripts, configuration files, optional demos, and launchers. 
 
-Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`. 
+Analysis scripts are organized by step index under `threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `threads/{thread_name}/analysis/config/`. We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
 To run an analysis, first install the required dependencies listed in requirements.txt through 
 ```
 pip install -r requirements.txt
 ```
-Then run the full pipeline through `threads/{thread_name}/analysis/launcher/run_analysis.py`, or manually execute scripts step by step from `threads/{thread_name}/analysis/scripts/`. Analysis scripts read parameters directly from the YAML configuration files. Any adjustments to the analysis design should be made in those YAML files rather than hard-coding in the scripts.
+Then run the full pipeline through `threads/{thread_name}/analysis/launcher/run_analysis.py`, or manually execute scripts step by step from `threads/{thread_name}/analysis/scripts/`. 
+
+At runtime, analysis scripts read parameters directly from the YAML configuration files. Any adjustments to the analysis design should be made in those YAML files rather than hard-coding in the scripts.
 
 After running the analysis, the processed data will be saved in `threads/{thread_name}/data/`, and the results will be saved in `threads/{thread_name}/results/`. 
 
 Some reporting templates are provided in `threads/{thread_name}/results/reports/`. After running the analysis, render the `.qmd` files to generate reports.
-
-We also provide some demo notebooks under `threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
 ---
 
