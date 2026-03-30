@@ -38,7 +38,6 @@ project_name/
 │   │   ├── experiment.yml          # top-level experiment specification linking to module configs
 │   │   └── modules/                # modular configuration files defining detailed parameters
 │   │       ├── layout.yml
-│   │       ├── stimuli.yml
 │   │       └── ...
 │   └── launcher/                   # wrapper script for running the experiment
 │

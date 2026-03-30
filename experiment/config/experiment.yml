@@ -1,0 +1,3 @@
+pairwise_scramble:
+  layout: side_by_side # refer to config/modules/layout.yml
+  stimuli: scrambled_image

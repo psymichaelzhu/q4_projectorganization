@@ -1,0 +1,21 @@
+# different image display layouts
+side_by_side:
+  display: "flex"
+  flex_direction: "row"
+  gap: "24px"
+  width: "1200px"
+  height: "600px"
+  justify_content: "center"
+  align_items: "center"
+  padding: "24px"
+
+# top-bottom layout
+top_bottom:
+  display: "flex"
+  flex_direction: "column"
+  gap: "24px"
+  width: "800px"
+  height: "1200px"
+  justify_content: "center"
+  align_items: "center"
+  padding: "24px"
