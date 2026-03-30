@@ -16,3 +16,8 @@ All the following steps start with the aggregated vocabulary dataset `data/data_
 
 - `03_child_word_lm.R`:
   Center age at the youngest child group (age_center = 3), fit per-word linear regressions on the child-only data `word_lm.csv`, and generate plots of regression intercepts and slopes `p3-1_intercept-word-lm.png` `p3-2_slope-word-lm.png`.
+
+
+## Usage
+
+Open `t01_behavioral_accuracy.Rproj` in RStudio, then run `analysis/launcher/run_pipeline.R`.
