@@ -162,7 +162,7 @@ Within each thread, the `analysis/` directory contains scripts, configuration fi
 
 Analysis scripts are organized by step index under `analysis_threads/{thread_name}/analysis/scripts/`. Configuration details are defined in YAML files under `analysis_threads/{thread_name}/analysis/config/`, for example [02_child_descriptive_summary.yml](analysis_threads/t01_behavioral_accuracy/analysis/config/02_child_descriptive_summary.yml). We also provide some demo notebooks under `analysis_threads/{thread_name}/analysis/demos/` for demonstrating core functions.
 
-To run an analysis, first clone the repository, then conduct analysis following the specific instructions in the `README.md` for each analysis thread:
+To run an analysis, first clone the repository, then conduct analysis following the specific instructions in the `README.md` for each analysis thread, for example [t01_behavioral_accuracy](analysis_threads/t01_behavioral_accuracy/README.md):
 
 Usually, you need to install the required dependencies first.
 
