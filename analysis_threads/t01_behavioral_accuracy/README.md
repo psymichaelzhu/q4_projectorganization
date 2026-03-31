@@ -8,7 +8,7 @@ Transform aggregated vocabulary accuracy data into descriptive visualizations an
 
 All the following steps start with the aggregated vocabulary dataset `data/data_transformed/vocabulary_dataset.csv`.
 
-> Note: Since the data might be lab-related, the data file in this repository is empty. All results were generated from the original data.
+> Note: Since the data might be lab-related, the data file in this repository is empty. Though all results were generated from the original data.
 
 - `01_cell_level_heatmap.R`:
    Generate full age-by-word heatmaps for recognition accuracy (pc) `figures/main/p1-1_pc-heatmap.png` and subject counts (num_subjects) `figures/main/p1-2_n_subjects-heatmap.png`.
